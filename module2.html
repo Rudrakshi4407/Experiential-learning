@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Course Feedback Form</title>
+
+    <style>
+    /* ===== Global Reset ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* ===== Body Styling ===== */
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(to right, #f0f4f8, #d9e4f5);
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* ===== Navigation Bar ===== */
+    nav {
+        background: #004080;
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 20px;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+        color: #ffcc00;
+    }
+
+    /* ===== Form Container ===== */
+    .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 25px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        border: 1px solid #ccc;
+    }
+
+    /* ===== Headings ===== */
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #004080;
+    }
+
+    /* ===== Labels & Inputs ===== */
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+    input[type="text"], input[type="email"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+        border-color: #004080;
+        box-shadow: 0 0 8px rgba(0,64,128,0.3);
+    }
+
+    /* ===== Radio & Checkbox Groups ===== */
+    .radio-group, .checkbox-group {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+    }
+    .radio-group label, .checkbox-group label {
+        font-weight: normal;
+    }
+
+    /* ===== Buttons ===== */
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #004080;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+        background: #003366;
+        transform: scale(1.05);
+    }
+
+    /* ===== Special Button ID ===== */
+    #submitBtn {
+        background: #28a745;
+    }
+    #submitBtn:hover {
+        background: #218838;
+    }
+
+    /* ===== Highlight Class ===== */
+    .highlight {
+        color: #ff6600;
+        font-style: italic;
+    }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#form">Feedback Form</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- Form Container -->
+<div class="form-container">
+
+<h2 id="form">Chemistry Course Feedback Form</h2>
+
+<form action="#" method="post">
+
+  <!-- Student Info -->
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <!-- Course Rating -->
+  <label for="rating">Rate the Chemistry course (1 = Poor, 10 = Excellent):</label>
+  <input type="range" id="rating" name="rating" min="1" max="10" required>
+
+  <!-- Difficulty -->
+  <label>Course Difficulty (Chemistry concepts):</label>
+  <div class="radio-group">
+    <label><input type="radio" name="difficulty" value="Easy" required> Easy</label>
+    <label><input type="radio" name="difficulty" value="Moderate"> Moderate</label>
+    <label><input type="radio" name="difficulty" value="Hard"> Hard</label>
+  </div>
+
+  <!-- Branch of Chemistry -->
+  <label for="branch">Which branch of Chemistry was most challenging?</label>
+  <select id="branch" name="branch" required>
+    <option value="">--Select--</option>
+    <option value="Organic">Organic Chemistry</option>
+    <option value="Inorganic">Inorganic Chemistry</option>
+    <option value="Physical">Physical Chemistry</option>
+    <option value="Analytical">Analytical Chemistry</option>
+    <option value="Biochemistry">Biochemistry</option>
+  </select>
+
+  <!-- Favorite Topic -->
+  <label for="favorite">Your Favorite Topic in Chemistry:</label>
+  <input type="text" id="favorite" name="favorite" placeholder="e.g., Chemical Bonding, Thermodynamics" required>
+
+  <!-- Lab Experience -->
+  <label for="lab">Rate your Lab/Practical experience (1 = Poor, 10 = Excellent):</label>
+  <input type="range" id="lab" name="lab" min="1" max="10" required>
+
+  <!-- Comments -->
+  <label for="comments">Your Comments on Chemistry course:</label>
+  <textarea id="comments" name="comments" placeholder="Share your thoughts..." required></textarea>
+
+  <!-- Suggestions -->
+  <label for="suggestions">Suggestions for Improvement:</label>
+  <textarea id="suggestions" name="suggestions" placeholder="What could make this course better?" required></textarea>
+
+  <!-- Confirmation -->
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="confirm" required> I confirm that my feedback is honest and accurate.</label>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" id="submitBtn">Submit Feedback</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
